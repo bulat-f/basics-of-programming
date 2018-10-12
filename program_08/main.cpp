@@ -17,21 +17,29 @@ int main()
 	cout << "Rules is following" << endl;
 	cout << "If your guess is Head enter 1" << endl;
 	cout << "If your guess is Tail enter 2" << endl;
+	cout << "If you want to finish game enter 0" << endl << endl;
 	cout << "So, let's play!!!" << endl << endl;
 
-	// two lines bellow to flip a coin
-	srand(time(NULL));
-	coin = rand() % 2 + 1;
+	while (true)
+	{
+		// two lines bellow to flip a coin
+		srand(time(NULL));
+		coin = rand() % 2 + 1;
 
-	cout << "Coin is flipped" << endl;
-	cout << "Your guess: ";
+		cout << "Coin is flipped" << endl;
+		cout << "Your guess: ";
 
-	cin >> guess;
+		cin >> guess;
 
-	if (coin == guess)
-		cout << "U won" << endl;
-	else
-		cout << "Uuu, you are such are looser" << endl;
+		if (guess == 0) break;
+
+		if (coin == guess)
+			cout << "U won" << endl;
+		else
+			cout << "Uuu, you are such are looser" << endl;
+
+		cout << endl;
+	}
 
 	return 0;
 }
