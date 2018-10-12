@@ -8,6 +8,8 @@ int main()
 {
 	int coin; // here will be flipped coin
 	int guess; // here will be guess of player
+	int rounds = 0; // count of game rounds
+	int score = 0;
 
 	// greating player
 	cout << "Yo man! Wanna play some game?" << endl;
@@ -33,13 +35,24 @@ int main()
 
 		if (guess == 0) break;
 
+		rounds++;
+
 		if (coin == guess)
+		{
+			score++;
 			cout << "U won" << endl;
+		}
 		else
+		{
 			cout << "Uuu, you are such are looser" << endl;
+		}
 
 		cout << endl;
 	}
+
+	cout << "Total rounds: " << rounds << endl;
+	cout << "Your score:   " << score << endl;
+	cout << "Win rate:     " << (float)score / rounds * 100 << "%" << endl;
 
 	return 0;
 }
